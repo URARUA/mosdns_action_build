@@ -1,9 +1,13 @@
 name: Release mosdns
 
 on:
-  push:
+  workflow_dispatch:
     tags:
       - 'v*'
+
+permissions:
+  contents: read
+  actions: write
 
 jobs:
 
