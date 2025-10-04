@@ -1,4 +1,4 @@
-# !/usr/bin/env python3
+#!/usr/bin/env python3
 import argparse
 import logging
 import os
@@ -14,28 +14,9 @@ RELEASE_DIR = './release'
 
 logger = logging.getLogger(__name__)
 
-# more info: https://golang.org/doc/install/source
-# [(env : value),(env : value)]
+# 只保留 Windows 版本的构建配置
 envs = [
-    [['GOOS', 'android'], ['GOARCH', 'amd64']],
-    [['GOOS', 'android'], ['GOARCH', 'arm64']],
-    [['GOOS', 'darwin'], ['GOARCH', 'amd64']],
-    [['GOOS', 'darwin'], ['GOARCH', 'arm64']],
-    [['GOOS', 'windows'], ['GOARCH', 'amd64']],
-    [['GOOS', 'windows'], ['GOARCH', 'arm64']],
-    [['GOOS', 'linux'], ['GOARCH', 'amd64']],
-    [['GOOS', 'linux'], ['GOARCH', 'arm64']],
-    [['GOOS', 'linux'], ['GOARCH', 'arm'], ['GOARM', '5']],
-    [['GOOS', 'linux'], ['GOARCH', 'arm'], ['GOARM', '6']],
-    [['GOOS', 'linux'], ['GOARCH', 'arm'], ['GOARM', '7']],
-    [['GOOS', 'linux'], ['GOARCH', 'mips']],
-    [['GOOS', 'linux'], ['GOARCH', 'mips'], ['GOMIPS', 'softfloat']],
-    [['GOOS', 'linux'], ['GOARCH', 'mips64']],
-    [['GOOS', 'linux'], ['GOARCH', 'mips64'], ['GOMIPS64', 'softfloat']],
-    [['GOOS', 'linux'], ['GOARCH', 'mipsle']],
-    [['GOOS', 'linux'], ['GOARCH', 'mipsle'], ['GOMIPS', 'softfloat']],
-    [['GOOS', 'linux'], ['GOARCH', 'mips64le']],
-    [['GOOS', 'linux'], ['GOARCH', 'mips64le'], ['GOMIPS64', 'softfloat']]
+    [['GOOS', 'windows'], ['GOARCH', 'amd64']]
 ]
 
 
