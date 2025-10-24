@@ -16,6 +16,8 @@ logger = logging.getLogger(__name__)
 
 # 只保留 Windows 版本的构建配置
 envs = [
+    [['GOOS', 'linux'], ['GOARCH', 'arm64']],
+    [['GOOS', 'linux'], ['GOARCH', 'amd64']],
     [['GOOS', 'windows'], ['GOARCH', 'amd64']]
 ]
 
